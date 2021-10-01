@@ -1,0 +1,17 @@
+int ledPin = 13;  //Assign a variable to the built-in LED
+int buttonPin = 15; //And another variable for the button
+
+int buttonState;
+
+void setup() {
+  pinMode(ledPin,OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+  
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+  if(buttonState == LOW){
+    digitalWrite(ledPin,HIGH);
+  }
+}
