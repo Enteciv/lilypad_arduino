@@ -12,15 +12,15 @@ void setup()
 
 void loop()
 {
-  digitalWrite(RED_PIN, LOW);
+  digitalWrite(RED_PIN, LOW);//Red LED ON
   delay(1000);
-  digitalWrite(RED_PIN, HIGH);//RED
+  digitalWrite(RED_PIN, HIGH);
   delay(1000);
-  digitalWrite(GREEN_PIN, LOW);
+  digitalWrite(GREEN_PIN, LOW);//Green LED ON
   delay(1000);
   digitalWrite(GREEN_PIN, HIGH);
   delay(1000);
-  digitalWrite(BLUE_PIN, LOW);
+  digitalWrite(BLUE_PIN, LOW);//Blue LED ON
   delay(1000);
   digitalWrite(BLUE_PIN, HIGH);
   delay(1000);
