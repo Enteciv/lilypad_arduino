@@ -1,0 +1,44 @@
+const int redLedPin =9;
+const int greenLedPin =11;
+const int tempSensorPin =A1;
+float degreesF;
+
+int temperatureReading;
+
+void setup()
+{
+  pinMode(redLedPin, OUTPUT);
+  pinMode(greenLedPin, OUTPUT);
+  pinMode(tempSensorPin, INPUT);
+
+
+  Serial.begin(9600);// output some info over serial
+
+  digitalWrite(greenLedPin, HIGH);
+  
+}
+
+void loop() {
+  //get voltage reading from temp sensor
+  temperatureReading = analogRead(tempSensorPin);
+
+  //convert that reading to voltage, Lilypad uses 4.2V not 5.0V
+  float voltage = temperatureReading *4.2;
+  voltage /= 1024.0;
+
+  //convert to Celcius
+  float temperatureC = (voltage - 0.5) * 100;
+
+ degreesF = temperatureC * (9.0/5.0) + 32.0;
+
+  Serial.print(degreesF); Serial.println("degrees F");
+
+  if (degreesF > 90) {
+    digitalWrite(redLedPin, HIGH);
+    digitalWrite(greenLedPin, LOW);
+  } else{
+    digitalWrite(redLedPin, LOW);
+    digitalWrite(greenLedPin, HIGH); 
+  }
+  delay(500);
+}
