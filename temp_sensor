@@ -33,7 +33,7 @@ void loop() {
 
   Serial.print(degreesF); Serial.println("degrees F");
 
-  if (degreesF > 90) {
+  if (degreesF < 75) {
     digitalWrite(redLedPin, HIGH);
     digitalWrite(greenLedPin, LOW);
   } else{
